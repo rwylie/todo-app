@@ -6,7 +6,8 @@ var promise = require('bluebird');
 var pgp = require('pg-promise')({
   promiseLib: Promise
 });
-var db = pgp({database: 'todo'});
+// var db = pgp({database: 'todo'});
+var db = pgp(process.env.DATABASE_URL || {database: 'todo'});
 
 app.set('view engine', 'hbs');
 
@@ -16,11 +17,13 @@ app.use('/static', express.static('public'));
 app.get('/', function(request, response) {
   response.redirect('/todos');
 });
-app.get('/todos', function(request, response) {
+
+app.get('/todos', function(request, response, next) {
   db.any('SELECT * FROM task')
   .then(function(todos) {
     response.render('todos.hbs', {todos: todos});
   })
+  catch(next);
 });
 
 app.post('/delete', function(request, response, next) {
