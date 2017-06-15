@@ -21,9 +21,9 @@ app.get('/', function(request, response) {
 app.get('/todos', function(request, response, next) {
   db.any('SELECT * FROM task')
   .then(function(todos) {
-    response.render('todos.hbs', {todos: todos});
+    response.render('todos.hbs', {'todos': todos});
   })
-  catch(next);
+  .catch(next);
 });
 
 app.post('/delete', function(request, response, next) {
