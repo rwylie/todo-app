@@ -29,9 +29,13 @@ app.get('/todos', function(request, response, next) {
 app.post('/delete', function(request, response, next) {
   // console.log(request.body);
   console.log(typeof(request.body.task));
+  console.log(request.body.task);
   var taskId = request.body.task;
   var plist = [];
-  if (typeof(taskId) === 'object') {
+  if (!taskId) {
+    // do nothing
+  }
+  else if (typeof(taskId) === 'object') {
     for (var i=0; i < taskId.length; i++) {
       var p = db.none('DELETE FROM task WHERE id = $1', taskId[i]);
       plist.push(p);
@@ -47,11 +51,6 @@ app.post('/delete', function(request, response, next) {
     response.redirect('/todos');
   })
     .catch(next);
-  // .then(function() {
-  //  response.redirect('/todos');
-  // })
-  // .catch(next);
-  // response.send('OK');
  });
 
 app.post('/add_todo', function(request, response, next) {

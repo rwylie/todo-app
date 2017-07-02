@@ -1,15 +1,99 @@
 body {
-  background-color: #AAEEAA;
+  background-color: white;
   color: black;
 }
+
 .center-page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .center-horizontal {
-    position: absolute;
-    left:50%;
-    transform: translate(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+h1{
+  font-family: 'Pangolin', cursive; color: #FAB098; text-align: center;
+}
+label {
+  font-family: 'Indie Flower', cursive;
+  color: #8EC4C6;
+  font-size: 1.2em;
+}
+
+.roundbutton{
+      display:block;
+      height: 25px;
+      width: 50px;
+      border-radius: 10%;
+      border: 1px solid #7B5744;
+      color: #457598;
+      background-color: white;
+
+    }
+.roundbutton:hover {
+  border:1px solid #999;
+  color: white;
+  background-color: #8EC4C6;
+}
+.roundbutton2{
+      display:block;
+      height: 25px;
+      width: 50px;
+      border-radius: 10%;
+      border: 1px solid #7B5744;
+      color: #457598;
+      background-color: white;
+    }
+
+.roundbutton2:hover {
+  border:1px solid #999;
+  color: white;
+  background-color: #FAB098;
+}
+.roundbutton3{
+      display:block;
+      height: 25px;
+      width: 50px;
+      border-radius: 10%;
+      border: 1px solid #7B5744;
+      color: #457598;
+      background-color: white;
+    }
+
+.roundbutton3:hover {
+  border:1px solid #999;
+  color: white;
+  background-color: #E9E097;
+}
+
+img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -10;
+}
+ul     	     {
+		list-style: none;
+    font-family: 'Indie Flower', cursive;
+    padding: 0px;
+	     }
+li {
+    font-size: 1.4em;
+    color: #FAC77B;
+}
+
+li:before {
+		content: "\2665";
+    color: #FAC77B;
+
+	     }
+
+@media only screen and (max-width: 760px) {
+  img {
+    width: 50%;
+    top: 40%;
+  }
 }

@@ -1,0 +1,22 @@
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+body {
+  background-color: #AAEEAA;
+  color: black;
+}
+.center {
+    position: absolute;
+    left:50%;
+}
+.center-page {
+    .center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.center-horizontal {
+    .center;
+    transform: translate(-50%);
+}
+label {
+  color: @light-blue;
+}

@@ -1,14 +1,19 @@
 <form style="color: purple; text-align: center;" action="/add_todo" method="POST">
-  <label>New task: </label><input type="text" name="description">
+  <label>New task:</label>&nbsp;<input type="text" name="description">
 </form>
 <div class='center-horizontal'>
   <form method="POST" action="/delete">
     <ul>
       {{#each todos}}
-      <li style=" font-family: cursive;">
-        <h3> {{description}} <input type="checkbox" name="task" value="{{id}}"></h3></li>
+      <li>
+         {{description}} <input type="checkbox" name="task" value="{{id}}"></li>
       {{/each}}
     </ul>
-    <input style="color: purple; background-color: white;" type="submit" value="Delete" />
+    <div style="display: inline-block;">
+      <button class='roundbutton' type="submit" value="Delete">Delete</button>
+      <button class='roundbutton2'type="submit" value="Save">Save</button>
+      <button class="roundbutton3" type="submit" value="Print">Print</button>
+    </div>
   </form>
 </div>
+<img src="static/images/teacup.png">
