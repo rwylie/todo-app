@@ -7,7 +7,14 @@ var pgp = require('pg-promise')({
   promiseLib: Promise
 });
 // var db = pgp({database: 'todo'});
-var db = pgp(process.env.DATABASE_URL || {database: 'todo'});
+var db = pgp(process.env.DATABASE_URL || {
+  host: "localhost",
+  port: 5432,
+  database: 'todo',
+  user: 'postgres'
+});
+
+
 
 app.set('view engine', 'hbs');
 
